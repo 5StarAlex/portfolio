@@ -1,0 +1,142 @@
+:root {
+  --bg-base: #090d13;
+  --bg-elevated: #101722;
+  --gold-primary: #d39a2f;
+  --gold-soft: #f0bd55;
+  --gold-pale: #ffe0a0;
+  --text-primary: #efe4ca;
+  --text-muted: #c8b489;
+  --stroke-glass: rgba(211, 154, 47, 0.45);
+  --stroke-soft: rgba(240, 189, 85, 0);
+  --blur-md: 12px;
+  --radius-pill: 999px;
+  --radius-card: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  color: var(--text-primary);
+  font-family: Inter, "Segoe UI", sans-serif;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #080b12, #070910 48%, #0b0f16);
+}
+
+.space-bg {
+  position: fixed;
+  inset: -8vmax;
+  z-index: -3;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 52% 45%, rgba(240, 189, 85, 0.1), transparent 34%),
+    linear-gradient(180deg, #090b15, #05060c 54%, #080b12);
+}
+
+.parallax-layer,
+.cursor-halo {
+  position: absolute;
+  inset: 0;
+  transform: translate3d(var(--mx, 0), var(--my, 0), 0);
+  transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.stars {
+  opacity: 0.72;
+  background-image:
+    radial-gradient(circle, rgba(255, 244, 220, 0.95) 0 1px, transparent 1.8px),
+    radial-gradient(circle, rgba(255, 231, 174, 0.72) 0 1px, transparent 2px),
+    radial-gradient(circle, rgba(240, 189, 85, 0.7) 0 1px, transparent 2px);
+  background-size: 180px 180px, 260px 260px, 420px 420px;
+  background-position: 12px 18px, 80px 40px, 130px 210px;
+}
+
+.stars-front {
+  opacity: 0.46;
+  filter: drop-shadow(0 0 5px rgba(255, 230, 180, 0.72));
+  background-size: 130px 130px, 220px 220px, 360px 360px;
+}
+
+.gold-field {
+  filter: blur(2px);
+  mix-blend-mode: screen;
+}
+
+.field-a {
+  opacity: 0.62;
+  background:
+    radial-gradient(circle at 74% 30%, rgba(240, 189, 85, 0.35) 0 8%, rgba(211, 154, 47, 0.18) 14%, transparent 31%),
+    radial-gradient(circle at 62% 72%, rgba(255, 224, 160, 0.18) 0 9%, rgba(211, 154, 47, 0.1) 18%, transparent 39%);
+}
+
+.field-b {
+  opacity: 0.44;
+  background:
+    radial-gradient(circle at 16% 72%, rgba(211, 154, 47, 0.26) 0 11%, rgba(211, 154, 47, 0.09) 24%, transparent 45%),
+    radial-gradient(circle at 86% 84%, rgba(255, 224, 160, 0.2) 0 8%, rgba(211, 154, 47, 0.08) 20%, transparent 38%);
+}
+
+.cursor-halo {
+  inset: auto;
+  left: 0;
+  top: 0;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  opacity: 0.46;
+  background: radial-gradient(circle, rgba(255, 224, 160, 0.24), rgba(211, 154, 47, 0.12) 45%, transparent 72%);
+  filter: blur(12px);
+  transform: translate3d(calc(var(--cursor-x, 50vw) - 120px), calc(var(--cursor-y, 50vh) - 120px), 0);
+  transition: none;
+}
+
+.bg-noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+  opacity: 0.05;
+  background-image: radial-gradient(circle at 1px 1px, #fff 1px, transparent 0);
+  background-size: 3px 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+
+.skip-link:focus {
+  left: 0.75rem;
+  top: 0.75rem;
+  z-index: 100;
+  background: #0a1018;
+  border: 1px solid var(--gold-soft);
+  color: var(--text-primary);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  width: min(1200px, 96vw);
+  margin: 0 auto 4rem;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
