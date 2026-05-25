@@ -4,6 +4,16 @@
   --gold-primary: #d39a2f;
   --gold-soft: #f0bd55;
   --gold-pale: #ffe0a0;
+  --accent-primary: var(--gold-primary);
+  --accent-soft: var(--gold-soft);
+  --accent-pale: var(--gold-pale);
+  --accent-rgb: 240, 189, 85;
+  --bg-core: #080b12;
+  --bg-mid: #070910;
+  --bg-low: #0b0f16;
+  --field-a: rgba(240, 189, 85, 0.35);
+  --field-b: rgba(211, 154, 47, 0.26);
+  --field-soft: rgba(255, 224, 160, 0.18);
   --text-primary: #efe4ca;
   --text-muted: #c8b489;
   --stroke-glass: rgba(211, 154, 47, 0.45);
@@ -11,6 +21,82 @@
   --blur-md: 12px;
   --radius-pill: 999px;
   --radius-card: 20px;
+}
+
+body.theme-blue {
+  --gold-primary: #3b82f6;
+  --gold-soft: #60a5fa;
+  --gold-pale: #bfdbfe;
+  --accent-primary: #3b82f6;
+  --accent-soft: #60a5fa;
+  --accent-pale: #bfdbfe;
+  --accent-rgb: 96, 165, 250;
+  --bg-core: #07111f;
+  --bg-mid: #050b17;
+  --bg-low: #081525;
+  --field-a: rgba(96, 165, 250, 0.36);
+  --field-b: rgba(37, 99, 235, 0.26);
+  --field-soft: rgba(191, 219, 254, 0.18);
+  --text-primary: #eaf2ff;
+  --text-muted: #b9ccec;
+  --stroke-glass: rgba(96, 165, 250, 0.42);
+}
+
+body.theme-red {
+  --gold-primary: #dc2626;
+  --gold-soft: #fb7185;
+  --gold-pale: #fecdd3;
+  --accent-primary: #dc2626;
+  --accent-soft: #fb7185;
+  --accent-pale: #fecdd3;
+  --accent-rgb: 251, 113, 133;
+  --bg-core: #16070b;
+  --bg-mid: #100408;
+  --bg-low: #1b080e;
+  --field-a: rgba(251, 113, 133, 0.34);
+  --field-b: rgba(220, 38, 38, 0.25);
+  --field-soft: rgba(254, 205, 211, 0.17);
+  --text-primary: #fff0f2;
+  --text-muted: #f0b8c0;
+  --stroke-glass: rgba(251, 113, 133, 0.42);
+}
+
+body.theme-green {
+  --gold-primary: #059669;
+  --gold-soft: #34d399;
+  --gold-pale: #bbf7d0;
+  --accent-primary: #059669;
+  --accent-soft: #34d399;
+  --accent-pale: #bbf7d0;
+  --accent-rgb: 52, 211, 153;
+  --bg-core: #041411;
+  --bg-mid: #03100d;
+  --bg-low: #061a15;
+  --field-a: rgba(52, 211, 153, 0.34);
+  --field-b: rgba(5, 150, 105, 0.25);
+  --field-soft: rgba(187, 247, 208, 0.17);
+  --text-primary: #ecfdf5;
+  --text-muted: #b7e4d0;
+  --stroke-glass: rgba(52, 211, 153, 0.42);
+}
+
+body.theme-white {
+  --gold-primary: #64748b;
+  --gold-soft: #2563eb;
+  --gold-pale: #0f172a;
+  --accent-primary: #2563eb;
+  --accent-soft: #3b82f6;
+  --accent-pale: #dbeafe;
+  --accent-rgb: 37, 99, 235;
+  --bg-core: #f8fafc;
+  --bg-mid: #eef4ff;
+  --bg-low: #ffffff;
+  --field-a: rgba(59, 130, 246, 0.22);
+  --field-b: rgba(148, 163, 184, 0.2);
+  --field-soft: rgba(255, 255, 255, 0.7);
+  --text-primary: #0f172a;
+  --text-muted: #334155;
+  --stroke-glass: rgba(37, 99, 235, 0.28);
 }
 
 * {
@@ -27,7 +113,8 @@ body {
   color: var(--text-primary);
   font-family: Inter, "Segoe UI", sans-serif;
   overflow-x: hidden;
-  background: linear-gradient(180deg, #080b12, #070910 48%, #0b0f16);
+  background: linear-gradient(180deg, var(--bg-core), var(--bg-mid) 48%, var(--bg-low));
+  transition: background 420ms ease, color 420ms ease;
 }
 
 .space-bg {
@@ -37,8 +124,8 @@ body {
   overflow: hidden;
   pointer-events: none;
   background:
-    radial-gradient(circle at 52% 45%, rgba(240, 189, 85, 0.1), transparent 34%),
-    linear-gradient(180deg, #090b15, #05060c 54%, #080b12);
+    radial-gradient(circle at 52% 45%, rgba(var(--accent-rgb), 0.1), transparent 34%),
+    linear-gradient(180deg, var(--bg-core), var(--bg-mid) 54%, var(--bg-low));
 }
 
 .parallax-layer,
@@ -54,8 +141,8 @@ body {
   opacity: 0.72;
   background-image:
     radial-gradient(circle, rgba(255, 244, 220, 0.95) 0 1px, transparent 1.8px),
-    radial-gradient(circle, rgba(255, 231, 174, 0.72) 0 1px, transparent 2px),
-    radial-gradient(circle, rgba(240, 189, 85, 0.7) 0 1px, transparent 2px);
+    radial-gradient(circle, var(--accent-pale) 0 1px, transparent 2px),
+    radial-gradient(circle, rgba(var(--accent-rgb), 0.7) 0 1px, transparent 2px);
   background-size: 180px 180px, 260px 260px, 420px 420px;
   background-position: 12px 18px, 80px 40px, 130px 210px;
 }
@@ -74,15 +161,15 @@ body {
 .field-a {
   opacity: 0.62;
   background:
-    radial-gradient(circle at 74% 30%, rgba(240, 189, 85, 0.35) 0 8%, rgba(211, 154, 47, 0.18) 14%, transparent 31%),
-    radial-gradient(circle at 62% 72%, rgba(255, 224, 160, 0.18) 0 9%, rgba(211, 154, 47, 0.1) 18%, transparent 39%);
+    radial-gradient(circle at 74% 30%, var(--field-a) 0 8%, rgba(var(--accent-rgb), 0.18) 14%, transparent 31%),
+    radial-gradient(circle at 62% 72%, var(--field-soft) 0 9%, rgba(var(--accent-rgb), 0.1) 18%, transparent 39%);
 }
 
 .field-b {
   opacity: 0.44;
   background:
-    radial-gradient(circle at 16% 72%, rgba(211, 154, 47, 0.26) 0 11%, rgba(211, 154, 47, 0.09) 24%, transparent 45%),
-    radial-gradient(circle at 86% 84%, rgba(255, 224, 160, 0.2) 0 8%, rgba(211, 154, 47, 0.08) 20%, transparent 38%);
+    radial-gradient(circle at 16% 72%, var(--field-b) 0 11%, rgba(var(--accent-rgb), 0.09) 24%, transparent 45%),
+    radial-gradient(circle at 86% 84%, var(--field-soft) 0 8%, rgba(var(--accent-rgb), 0.08) 20%, transparent 38%);
 }
 
 .cursor-halo {
@@ -93,7 +180,7 @@ body {
   height: 240px;
   border-radius: 50%;
   opacity: 0.46;
-  background: radial-gradient(circle, rgba(255, 224, 160, 0.24), rgba(211, 154, 47, 0.12) 45%, transparent 72%);
+  background: radial-gradient(circle, rgba(var(--accent-rgb), 0.24), rgba(var(--accent-rgb), 0.12) 45%, transparent 72%);
   filter: blur(12px);
   transform: translate3d(calc(var(--cursor-x, 50vw) - 120px), calc(var(--cursor-y, 50vh) - 120px), 0);
   transition: none;

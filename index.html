@@ -55,13 +55,32 @@
 
     <main id="main-content">
       <section id="home" class="hero section-shell">
+        <section class="slop-top-game-component" data-slop-game data-starting-coins="0" aria-label="Interactive pixel dodge game">
+          <div class="slop-game-marquee" data-play-limit="0.62">
+            <div class="slop-game-track" data-track>
+              <span class="slop-star-layer back" aria-hidden="true"></span>
+              <span class="slop-nebula-layer" aria-hidden="true"></span>
+              <span class="slop-star-layer front" aria-hidden="true"></span>
+              <span class="slop-gloss-layer" aria-hidden="true"></span>
+              <div class="slop-runner" aria-hidden="true">
+                <span class="slop-eye left"></span>
+                <span class="slop-eye right"></span>
+              </div>
+              <div class="slop-coins" data-coins>Coins: 0</div>
+            </div>
+          </div>
+        </section>
         <div class="hero-left">
-          <p class="intro reveal" style="--delay: 180ms">Hi, I&apos;m</p>
-          <div class="loading-bar reveal" style="--delay: 250ms" aria-hidden="true"><span></span></div>
+          <p class="title-name reveal parallax-text" style="--delay: 180ms" data-depth="90">
+            Alexander Lance <span class="selection-arrow arrow-name" aria-hidden="true">&larr;</span>
+          </p>
           <h1 class="title" aria-label="Portfolio Alexander Lance">
             <span class="port">Port</span><span class="folio">folio</span>
-            <span class="title-subtext">Alexander Lance &larr;</span>
           </h1>
+          <p class="intro reveal" style="--delay: 520ms">
+            &apos;Hi, I&apos;m <span aria-hidden="true">a</span>
+            <span class="selection-arrow arrow-intro" aria-hidden="true">&larr;</span>
+          </p>
           <p class="role reveal" style="--delay: 560ms">AI / ML Full-Stack Developer</p>
           <p class="bio reveal" style="--delay: 620ms">
             Junior Computer Science student at Francis Marion University building machine learning systems,
@@ -83,7 +102,11 @@
           <div class="portrait-sparkle sparkle-three" aria-hidden="true"></div>
           <div class="portrait-sparkle sparkle-four" aria-hidden="true"></div>
           <img src="assests/character.png" alt="Stylized portrait of Alexander Lance" loading="eager" />
-          <div class="hero-mark" aria-hidden="true"><i class="fa-solid fa-star"></i></div>
+          <button class="hero-mark" type="button" aria-label="Change site theme" data-theme-toggle>
+            <span class="star-spin-shell" aria-hidden="true">
+              <i class="fa-solid fa-star"></i>
+            </span>
+          </button>
         </div>
       </section>
 
